@@ -225,9 +225,9 @@ local function update_callargs(args, win, tick)
   args.rnu = a.nvim_get_option_value("rnu", {win = win})
   args.cul = a.nvim_get_option_value("cul", {win = win}) and (culopt:find("nu") or culopt:find("bo"))
   args.sclnu = lnumfunc and a.nvim_get_option_value("scl", {win = win}):find("nu")
-  args.fold.sep = fcs.foldsep or "│"
-  args.fold.open = fcs.foldopen or "-"
-  args.fold.close = fcs.foldclose or "+"
+  args.fold.sep = fcs.foldsep or " "
+  args.fold.open = fcs.foldopen or " "
+  args.fold.close = fcs.foldclose or ""
   args.fold.width = C.compute_foldcolumn(args.wp, 0)
   args.empty = C.win_col_off(args.wp) == 0
   if signsegmentcount - ((lnumfunc and not args.sclnu) and 1 or 0) > 0 then
